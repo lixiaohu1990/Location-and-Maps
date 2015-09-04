@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.8" data-basepath=".." data-revision="Fri Sep 04 2015 11:31:56 GMT+0800 (CST)">
+    <div class="book" data-level="2.8" data-basepath=".." data-revision="Fri Sep 04 2015 11:43:00 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -414,19 +414,18 @@
 <li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;</li>
 <li>&#x5F00;&#x542F;&#x5B9A;&#x4F4D;&#x8DDF;&#x8E2A;&#x670D;&#x52A1;&#xFF0C;&#x8C03;&#x7528;<code>startMonitoringSignificantLocationChanges</code></li>
 <li>&#x8C03;&#x7528;<code>stopMonitoringSignificantLocationChanges</code>&#x6765;&#x5173;&#x95ED;&#x5B9A;&#x4F4D;&#x8DDF;&#x8E2A;&#x670D;&#x52A1;</li>
-<li>```objective-c</li>
-<li><p>(void)startSignificantChangeUpdates
-{
-  // Create the location manager if this object does not
-  // already have one.
-  if (nil == _locationManager)</p>
-<pre><code>  _locationManager = [[CLLocationManager alloc] init];
-</code></pre><p>  _locationManager.delegate = self;
-  [_locationManager startMonitoringSignificantLocationChanges];
-}
-```</p>
-</li>
 </ul>
+<pre><code class="lang-objective-c">- (void)startSignificantChangeUpdates
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == _locationManager)
+        _locationManager = [[CLLocationManager alloc] init];
+
+    _locationManager.delegate = self;
+    [_locationManager startMonitoringSignificantLocationChanges];
+}
+</code></pre>
 <blockquote>
 <p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x7533;&#x8BF7;&#x989D;&#x5916;&#x7684;10&#x5206;&#x949F;&#x8BA9;&#x4F60;&#x6267;&#x884C;&#x60F3;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7533;&#x8BF7;&#x540E;&#x53F0;&#x4EFB;&#x52A1;&#xFF1A;beginBackgroundTaskWithExpirationHandler</p>
 </blockquote>
